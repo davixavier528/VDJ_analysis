@@ -19,7 +19,7 @@ VDJ_analysis/
     ├── convert_ab1_to_fasta.py
     ├── igblastn_analysis.sh
     ├── mv_fasta.sh
-    ├── ncbi-igblast-1.20.0/
+    ├── ncbi-igblast-1.20.0/ # precisa ser adicionado!
     │   ├── bin/
     │   ├── ChangeLog
     │   ├── database/
