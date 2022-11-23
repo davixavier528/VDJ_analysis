@@ -1,9 +1,12 @@
-O programa realiza (i) conversões de arquivos ab1 para fasta, (ii) análises com a ferramenta IgBLASTn  e (iii) formata
+# Anotação de segmentos VDJ
+* O programa realiza (i) conversões de arquivos ab1 para fasta, (ii) análises com a ferramenta IgBLASTn  e (iii) formata
 outputs em  uma tabela do excel contendo informações do tipo de cadeia, produtividade, sequência CDR (e seu tamanmho),
 quantidade de mutações e os genes V, D e J com maior identidade encontrados no banco de dados IMGT.
+---
 
-Apresenta a seguinte estruturação:
+# Apresenta a seguinte estruturação:
 
+```bash
 VDJ_analysis/
 ├── data/
 │   ├── input/
@@ -25,50 +28,46 @@ VDJ_analysis/
     │   └── optional_file/
     ├── permissions.sh
     └── processing_igblastn.sh
+```
 
-Para configurar corretamente, siga os seguintes passos:
+# Requisitos
+* Linux
+* Python 3.7.X
+* Dependências: biopython, pandas e openpyxl
+* Para instalar as dependências, va até o diretório "VDJ_analysis" e execute o seguinte:
+* `pip install -r requirements.txt`
 
-1. Requisitos:
+# Utilização
+## Linux
 
-    O programa só foi testado e habilitado para distribuições Linux
-    
-    Alguns scripts foram escritos na linguagem Python, é necessário que você possua Python no seu computador
+1. Descompactar os arquivos
 
-    Adicionalmente, alguns passos precisam de dependências (biopython, pandas e openpyxl), que podem ser facilmente
-    instaladas da seguinte forma:
-    
-    No diretório "VDJ_analysis", abra a linha de comando e execute o seguinte:
-
-    pip install -r requirements.txt
+	No diretório "VDJ_analysis", abra a linha de comando e execute o seguinte:
+	`unzip '*.zip'`
 
 2. Dar permissão de execução para o arquivo "Makefile"
 
-    No diretório "VDJ_analysis", abra a linha de comando e execute o seguinte:
-
-    chmod u+x "Makefile"
+	No diretório "VDJ_analysis", abra a linha de comando e execute o seguinte:
+	`chmod u+x 'Makefile'`
 
 3. Dar permissão de execução para o restante dos scripts
 
-    No diretório "VDJ_analysis", abra a linha de comando e execute o seguinte:
-
-    make config
+	No diretório "VDJ_analysis", abra a linha de comando e execute o seguinte:
+	`make config`
     
-4. Para iniciar suas análises, coloque os arquivos ab1 no diretório data/input/ab1/
+4. Para iniciar suas análises, coloque seus arquivos ab1 no diretório: `data/input/ab1/`
 
 5. Converter arquivos ab1 para fasta
 
-    No diretório "VDJ_analysis", abra a linha de comando e execute o seguinte:
-
-    make format_input
+	No diretório "VDJ_analysis", abra a linha de comando e execute o seguinte:
+	`make format_input`
 
 6. Realizar as análises do IgBLASTn
 
-    No diretório "VDJ_analysis", abra a linha de comando e execute o seguinte:
-
-    make analysis
+	No diretório "VDJ_analysis", abra a linha de comando e execute o seguinte:
+	`make analysis`
 
 7. Formatar o output para auxiliar na visualização
-	
-    No diretório "VDJ_analysis", abra a linha de comando e execute o seguinte:
 
-    make format_output
+	No diretório "VDJ_analysis", abra a linha de comando e execute o seguinte:
+	`make format_output`
